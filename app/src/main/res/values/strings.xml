@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Login&amp;SignUp</string>
+    <string name="splashscreen">splashScreen</string>
+    <string name="on_boarding_iv">onBorardingIv</string>
+    <string name="on_boarding_tv">Welcome to our simple app to learn the authentication, i hope u enjoy  </string>
+    <string name="let_s_start">Let\'s start</string>
+    <string name="welcome_to_our">Welcome to our</string>
+    <string name="e_grocery">E-Grocery</string>
+    <string name="create_an_account">Create an account</string>
+    <string name="continue_with_email">Continue with Email</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="login">Login</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="password">Password</string>
+    <string name="remember_me">Remember me</string>
+    <string name="don_t_have_account">Don\'t Have Account?</string>
+    <string name="sign_up">Sign up</string>
+    <string name="create_account">Create Account</string>
+    <string name="sign_up_name">Name</string>
+    <string name="re_password">re-Password</string>
+    <string name="sign_up_sign_up_btn">Sign up</string>
+    <string name="already_have_account">Already Have Account?</string>
+</resources>

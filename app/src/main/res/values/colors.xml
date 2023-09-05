@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="on_boarding_tv">#3f3d56</color>
+    <color name="border_btn">#6c63ff</color>
+    <color name="iv_boarder">#707070</color>
+    <color name="welcome_color">#F89B26</color>
+    <color name="et_boarder">#ECECEC</color>
+    <color name="et_fill_color">#8B8B97</color>
+</resources>
