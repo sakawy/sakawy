@@ -1,4 +1,4 @@
-package com.itssvkv.loginsignup.repository
+package com.itssvkv.loginsignup.data.network.repository
 
 import com.itssvkv.loginsignup.data.network.ApiCalls
 import com.itssvkv.loginsignup.utils.resultwrappar.safeApiCall

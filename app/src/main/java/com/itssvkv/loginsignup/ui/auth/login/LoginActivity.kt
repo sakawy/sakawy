@@ -6,11 +6,8 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import androidx.activity.viewModels
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.lifecycleScope
-import com.itssvkv.loginsignup.R
 import com.itssvkv.loginsignup.databinding.ActivityLoginBinding
-import com.itssvkv.loginsignup.ui.auth.AuthViewModel
 import com.itssvkv.loginsignup.ui.auth.signup.SignUpActivity
 import com.itssvkv.loginsignup.ui.home.HomeScreen
 import com.itssvkv.loginsignup.utils.common.Common.TAG
@@ -19,15 +16,13 @@ import com.itssvkv.loginsignup.utils.sharedPref.SharedPref.saveToPref
 import com.itssvkv.loginsignup.utils.sharedPref.SharedPrefKeys.LOGIN_DONE
 import com.itssvkv.loginsignup.utils.sharedPref.SharedPrefKeys.REMEMBER_ME
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
-import javax.inject.Inject
 
 @AndroidEntryPoint
 class LoginActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding
-    private val viewModel: AuthViewModel by viewModels()
+    private val viewModel: LoginViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
@@ -55,6 +50,7 @@ class LoginActivity : AppCompatActivity() {
 
         binding.signUpTv.setOnClickListener {
             startActivity(Intent(this, SignUpActivity::class.java))
+            finish()
         }
 
 

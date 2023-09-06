@@ -1,10 +1,8 @@
-package com.itssvkv.loginsignup.ui.auth
+package com.itssvkv.loginsignup.ui.auth.signup
 
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.itssvkv.loginsignup.data.network.repository.AuthRepo
-import com.itssvkv.loginsignup.responses.loginresponse.LoginResponse
 import com.itssvkv.loginsignup.utils.resultwrappar.CallResult
 import com.itssvkv.loginsignup.utils.resultwrappar.CallState
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -14,36 +12,12 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class AuthViewModel @Inject constructor(
+class SignUpViewModel @Inject constructor(
     private val repo: AuthRepo
 ) : ViewModel() {
 
-    private val _loginLiveData = MutableStateFlow<CallState>(CallState.EmptyState)
-    val loginLiveData = _loginLiveData.asStateFlow()
-
     private val _signUpStateFlow = MutableStateFlow<CallState>(CallState.EmptyState)
     val signUpStateFlow = _signUpStateFlow.asStateFlow()
-
-    fun login(
-        phone: String,
-        password: String,
-        imei: String,
-        token: String,
-        deviceType: String
-    ) {
-        viewModelScope.launch {
-            _loginLiveData.value = CallState.LoadingState
-            when (val response = repo.login(phone, password, imei, token, deviceType)) {
-                is CallResult.CallSuccess -> {
-                    _loginLiveData.value = CallState.SuccessState(response.data)
-                }
-
-                is CallResult.CallFailure -> {
-                    _loginLiveData.value = CallState.FailureState(response.msg, response.code)
-                }
-            }
-        }
-    }
 
     fun signUp(
         name: String,

@@ -7,15 +7,10 @@ import android.util.Log
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.lifecycle.lifecycleScope
-import com.itssvkv.loginsignup.R
 import com.itssvkv.loginsignup.databinding.ActivitySignUpBinding
-import com.itssvkv.loginsignup.ui.auth.AuthViewModel
 import com.itssvkv.loginsignup.ui.auth.login.LoginActivity
 import com.itssvkv.loginsignup.utils.common.Common
 import com.itssvkv.loginsignup.utils.resultwrappar.CallState
-import com.itssvkv.loginsignup.utils.sharedPref.SharedPref.saveToPref
-import com.itssvkv.loginsignup.utils.sharedPref.SharedPrefKeys
-import com.itssvkv.loginsignup.utils.sharedPref.SharedPrefKeys.LOGIN_DONE
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
@@ -23,7 +18,7 @@ import kotlinx.coroutines.launch
 @AndroidEntryPoint
 class SignUpActivity : AppCompatActivity() {
     private lateinit var binding: ActivitySignUpBinding
-    private val viewModel: AuthViewModel by viewModels()
+    private val viewModel: SignUpViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySignUpBinding.inflate(layoutInflater)
@@ -63,6 +58,11 @@ class SignUpActivity : AppCompatActivity() {
                 }
             }
         }
+        binding.signUpLoginTv.setOnClickListener {
+            startActivity(Intent(this, LoginActivity::class.java))
+            finish()
+        }
+
 
     }
 
