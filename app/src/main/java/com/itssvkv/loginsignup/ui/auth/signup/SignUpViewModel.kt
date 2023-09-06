@@ -3,7 +3,7 @@ package com.itssvkv.loginsignup.ui.auth
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.itssvkv.loginsignup.repository.AuthRepo
+import com.itssvkv.loginsignup.data.network.repository.AuthRepo
 import com.itssvkv.loginsignup.responses.loginresponse.LoginResponse
 import com.itssvkv.loginsignup.utils.resultwrappar.CallResult
 import com.itssvkv.loginsignup.utils.resultwrappar.CallState
